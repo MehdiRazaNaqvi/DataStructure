@@ -11,9 +11,9 @@ class Node {
 class Stack {
 
 
-    constructor(data) {
-        this.first = data
-        this.last = data
+    constructor() {
+        this.first = null
+        this.last = null
         this.size = 0
 
     }
@@ -28,12 +28,17 @@ class Stack {
         if (this.first) {
 
             let temp = this.first
-            this.first.next = temp
             this.first = newNode
+            this.first.next = temp
+
         }
         else{
-            
+            this.first = newNode
+            this.last = newNode
+
         }
+
+        return this.size++
 
 
 
@@ -44,3 +49,18 @@ class Stack {
 
 
 }
+
+
+
+
+let stack = new Stack
+
+stack.push("syed")
+stack.push("mehdi")
+stack.pull()
+stack.push("raza")
+stack.push("naqvi")
+
+
+
+console.log(stack)
